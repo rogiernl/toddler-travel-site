@@ -1,0 +1,180 @@
+:root {
+  --paper: #F8F2E8;
+  --ink: #454A59;
+  --ink-soft: #6B7080;
+  --mint: #BDE8D4;
+  --sky: #BADBF5;
+  --peach: #FACCB3;
+  --lavender: #D1C7F2;
+  --butter: #FCEBAD;
+  --card: #FFFCF6;
+  --radius: 22px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: ui-rounded, "SF Pro Rounded", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 24px 72px;
+}
+
+header.site {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+header.site img {
+  width: 76px;
+  height: 76px;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(69, 74, 89, 0.12);
+}
+
+header.site .title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+header.site .tagline {
+  margin: 2px 0 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+nav.pages, nav.langs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 14px;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  display: inline-block;
+  padding: 7px 16px;
+  border-radius: 999px;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1.5px solid rgba(69, 74, 89, 0.10);
+}
+
+nav.pages a[aria-current="page"] { background: var(--sky); border-color: transparent; }
+nav.langs a.active { background: var(--mint); border-color: transparent; }
+nav a:hover, nav a:focus-visible { background: var(--butter); outline: none; }
+
+nav.langs { margin-bottom: 36px; }
+
+section.lang + section.lang {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 2px dashed rgba(69, 74, 89, 0.15);
+}
+
+.js section.lang + section.lang { margin-top: 0; padding-top: 0; border-top: 0; }
+.js section.lang[hidden] { display: none; }
+
+h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 12px; }
+h2 { font-size: 1.3rem; margin: 40px 0 10px; }
+h3 { font-size: 1.08rem; margin: 22px 0 4px; }
+
+p, ul, ol { margin: 0 0 14px; }
+li { margin-bottom: 6px; }
+
+a { color: #3F6FA0; }
+
+.lead { font-size: 1.12rem; }
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 22px 26px;
+  margin: 22px 0;
+  box-shadow: 0 2px 10px rgba(69, 74, 89, 0.06);
+}
+
+.card > :first-child { margin-top: 0; }
+.card > :last-child { margin-bottom: 0; }
+
+.mint { background: var(--mint); }
+.sky { background: var(--sky); }
+.peach { background: var(--peach); }
+.lavender { background: var(--lavender); }
+.butter { background: var(--butter); }
+
+.games {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+  padding: 0;
+  list-style: none;
+  margin: 18px 0;
+}
+
+.games li {
+  margin: 0;
+  padding: 16px 18px;
+  border-radius: 18px;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.games li strong { display: block; font-size: 1.05rem; }
+
+.games li:nth-child(6n+1) { background: var(--mint); }
+.games li:nth-child(6n+2) { background: var(--sky); }
+.games li:nth-child(6n+3) { background: var(--peach); }
+.games li:nth-child(6n+4) { background: var(--lavender); }
+.games li:nth-child(6n+5) { background: var(--butter); }
+.games li:nth-child(6n+6) { background: var(--mint); }
+
+details {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 14px 20px;
+  margin: 10px 0;
+}
+
+details summary { cursor: pointer; font-weight: 600; }
+details[open] summary { margin-bottom: 8px; }
+details p:last-child { margin-bottom: 0; }
+
+.path { font-weight: 600; white-space: nowrap; }
+
+.meta { color: var(--ink-soft); font-size: 0.95rem; }
+
+footer.site {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 2px dashed rgba(69, 74, 89, 0.15);
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+footer.site p { margin: 0 0 8px; }
+
+@media (max-width: 520px) {
+  body { font-size: 17px; }
+  .wrap { padding: 28px 18px 56px; }
+  header.site img { width: 60px; height: 60px; border-radius: 14px; }
+  h1 { font-size: 1.6rem; }
+}
