@@ -1,11 +1,12 @@
 // Calm language switcher. Without JavaScript every language stays visible.
 (function () {
-  var LANGS = ["en", "nl", "fr", "es"];
+  var LANGS = ["en", "nl", "fr", "es", "de"];
   var LABELS = {
     en: { support: "Support", privacy: "Privacy", terms: "Terms" },
     nl: { support: "Support", privacy: "Privacy", terms: "Voorwaarden" },
     fr: { support: "Assistance", privacy: "Confidentialité", terms: "Conditions" },
-    es: { support: "Soporte", privacy: "Privacidad", terms: "Condiciones" }
+    es: { support: "Soporte", privacy: "Privacidad", terms: "Condiciones" },
+    de: { support: "Hilfe", privacy: "Datenschutz", terms: "Nutzungsbedingungen" }
   };
 
   document.documentElement.classList.add("js");
